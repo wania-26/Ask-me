@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ask Me 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+font-family:Arial;
+background:linear-gradient(135deg,#fce7f3,#e0f2fe);
+display:flex;justify-content:center;align-items:center;
+min-height:100vh;margin:0;
+}
+.box{
+background:white;padding:20px;border-radius:20px;
+width:90%;max-width:400px;
+}
+input,textarea,button{
+width:100%;margin-top:10px;padding:10px;
+border-radius:10px;border:none;
+}
+button{background:#ec4899;color:white;}
+.card{background:#f9f9f9;padding:10px;border-radius:10px;margin-top:10px;}
+.name{color:#ec4899;font-weight:bold;}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Ask Me Something 💭</h2>
+<input id="n" placeholder="Your name (or anonymous)">
+<textarea id="m" placeholder="Say anything about me"></textarea>
+<button onclick="add()">Send 💌</button>
+<div id="list"></div>
+</div>
+
+<script>
+function add(){
+let n=n.value||'Anonymous';
+let m=document.getElementById('m').value;
+if(!m) return;
+list.innerHTML=`<div class='card'><div class='name'>${n}</div>${m}</div>`+list.innerHTML;
+document.getElementById('m').value='';
+}
+</script>
+</body>
+</html>
